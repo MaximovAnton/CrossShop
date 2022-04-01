@@ -1,0 +1,12 @@
+.header{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    background-color: rgb(218, 251, 219);
+}
+
+li{
+    list-style: none;
+}
