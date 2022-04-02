@@ -1,4 +1,13 @@
 .content{
     display: flex;
+    flex-wrap: wrap;
     justify-content: start;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
