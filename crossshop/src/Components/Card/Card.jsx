@@ -3,9 +3,9 @@ import './Card.css'
 
 const Card = () => {
     return(
-        <div className="card">
-            Card
-        </div>
+            <div className="card">
+                Card
+            </div>
     )
 }
 

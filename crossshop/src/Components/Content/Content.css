@@ -2,7 +2,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
-    max-width: 80%;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.cardWrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 0 auto;
 }
 
