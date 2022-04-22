@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Content.css";
 import Card from "../Card/Card";
 
 const Content = () => {
+  
+
   return (
     <div>
         <div className="title">
@@ -11,11 +13,6 @@ const Content = () => {
       
       <div className="content">
         <div className="cardWrap">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
           <Card />
           <Card />
           <Card />

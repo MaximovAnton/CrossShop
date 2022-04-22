@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import './Card.css'
 import svg_unliked from '../../images/heart_unliked.png'
 import like from '../../images/heart_like.svg'
 import plus from '../../images/plus.svg'
-
+import Cart from '../Cart/Cart.jsx'
 
 const Card = () => {
+   
     return(
             <div className="card">
                 <div className="favorite">
