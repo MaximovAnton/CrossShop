@@ -1,0 +1,23 @@
+.cartItem {
+    display: flex;
+    position: relative;
+    background: rgb(196, 234, 192);
+    width: 280px;
+    height: 100px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+.cartItem img{
+    width: 100px;
+    height: 100px;
+}
+.cartInfo{
+    display: block;
+    width: 100%;
+}
+.close{
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}

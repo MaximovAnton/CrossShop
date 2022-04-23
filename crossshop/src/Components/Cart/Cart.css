@@ -1,5 +1,6 @@
 .overlay{
     position: absolute;
+    display: none;
     left: 0;
     top: 0;
     width: 100%;
@@ -9,12 +10,15 @@
 }
 
 .cart{
+    display: flex;
+    flex-direction: column;
+    height: -webkit-fill-available;
     position: absolute;
     width: 300px;
     right: 0;
     background-color: rgb(255, 255, 255);
     padding: 30px;
-    height: 100vh;
+    
 }
 
 .cart h3{
@@ -22,25 +26,12 @@
     margin: 0;
 }
 
-.cartItem {
+.cart ul li{
     display: flex;
-    position: relative;
-    background: rgb(196, 234, 192);
-    width: 280px;
-    height: 100px;
-}
-.cartItem img{
-    width: 100px;
-    height: 100px;
-}
-.cartInfo{
-    display: block;
-    width: 100%;
+    flex: 0 1;
 }
 
-.close{
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
+.items{
+    flex: 1;
+    overflow: auto;
 }

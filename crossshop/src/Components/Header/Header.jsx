@@ -13,7 +13,7 @@ const Header = () => {
                     <span>Название</span>
                 </div>
             </div>
-            <div className="cart">
+            <div className="header_cart">
                 <ul>
                     <li>полезная инфа</li>
                     <li><span>1200 $</span></li>
