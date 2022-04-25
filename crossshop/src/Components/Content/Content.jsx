@@ -4,6 +4,11 @@ import Card from "../Card/Card";
 
 const Content = () => {
   
+  const cardArray = [
+    {id: 1, name: 'Nike', price: 1200},
+    {id: 2, name: 'Adidas', price: 1500},
+    {id: 3, name: 'Puma', price: 1300}
+  ]
 
   return (
     <div>
@@ -13,9 +18,9 @@ const Content = () => {
       
       <div className="content">
         <div className="cardWrap">
-          <Card />
-          <Card />
-          <Card />
+          {cardArray.map(item => <Card  key={item.id} 
+                                              name={item.name} 
+                                              price={item.price}/>)}
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ import like from '../../images/heart_like.svg'
 import plus from '../../images/plus.svg'
 import Cart from '../Cart/Cart.jsx'
 
-const Card = () => {
+const Card = ({name, price}) => {
    
     return(
             <div className="card">
@@ -17,9 +17,9 @@ const Card = () => {
                     <img src="https://zastavok.net/main/raznoe/1415018881.jpg" alt="" />
                 </div>
                 
-                    <div className="card_title">Nike</div>
+                    <div className="card_title">{name}</div>
                     <div className="card_bottom">
-                        <div className="card_price">100$</div>
+                        <div className="card_price">{price} $</div>
                         <img src={plus} alt="" />
                     </div>
                     
