@@ -20,7 +20,7 @@ const Card = ({name, price}) => {
                     <div className="card_title">{name}</div>
                     <div className="card_bottom">
                         <div className="card_price">{price} $</div>
-                        <img src={plus} alt="" />
+                        <img src={plus} alt="plus" />
                     </div>
                     
                 
