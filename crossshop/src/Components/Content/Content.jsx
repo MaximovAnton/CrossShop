@@ -20,7 +20,8 @@ const Content = () => {
         <div className="cardWrap">
           {cardArray.map(item => <Card  key={item.id} 
                                               name={item.name} 
-                                              price={item.price}/>)}
+                                              price={item.price}
+                                              onClick={() => console.log(item.id)}/>)}
         </div>
       </div>
     </div>

@@ -3,8 +3,10 @@ import './Card.css'
 import svg_unliked from '../../images/heart_unliked.png'
 import plus from '../../images/plus.svg'
 
-const Card = ({name, price}) => {
-   
+const Card = ({name, price, onClick}) => {
+    
+  
+
     return(
             <div className="card">
                 <div className="favorite">
@@ -15,13 +17,11 @@ const Card = ({name, price}) => {
                     <img src="https://zastavok.net/main/raznoe/1415018881.jpg" alt="" />
                 </div>
                 
-                    <div className="card_title">{name}</div>
-                    <div className="card_bottom">
-                        <div className="card_price">{price} $</div>
-                        <img src={plus} alt="plus" />
-                    </div>
-                    
-                
+                <div className="card_title">{name}</div>
+                <div className="card_bottom">
+                    <div className="card_price"> {price} $</div>
+                    <img src={plus} alt="plus" onClick={onClick}/>
+                </div>
             </div>
     )
 }
