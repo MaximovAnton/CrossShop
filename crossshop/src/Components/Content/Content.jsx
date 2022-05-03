@@ -21,7 +21,8 @@ const Content = () => {
           {cardArray.map(item => <Card  key={item.id} 
                                               name={item.name} 
                                               price={item.price}
-                                              onClick={() => console.log(item.id)}/>)}
+                                              onFavourite={() => console.log(item.id, 'Добавили в закладки')}
+                                              onPlus={() => console.log(item.id)}/>)}
         </div>
       </div>
     </div>
