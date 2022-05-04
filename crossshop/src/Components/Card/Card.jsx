@@ -1,25 +1,31 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import './Card.css'
 import svg_unliked from '../../images/heart_unliked.png'
 import plus from '../../images/plus.svg'
 import ok from '../../images/ok.svg'
 
-const Card = ({name, price, onPlus, onFavourite}) => {
+const Card = ({name, price, onFavourite, images, onAddToCart}) => {
     
     const [img, setImg] = useState(false)
 
-    const setImgApply = () => {
+    const setImgApply = (e) => {
+        let a = {name, price, onFavourite, images, onAddToCart}
+        onAddToCart(a)
         setImg(!img)
     }
+
+    useEffect(() => {
+        console.log('Переменная изменилась', img)
+    },[img])
 
     return(
             <div className="card">
                 <div className="favorite">
-                    <img src={svg_unliked} alt="" width={30} height={30} onClick={onFavourite}/>
+                    <img src={svg_unliked} alt="favorite" width={30} height={30} onClick={onFavourite}/>
                 </div>
                 
                 <div className="card_img">
-                    <img src="https://zastavok.net/main/raznoe/1415018881.jpg" alt="" />
+                    <img src={images} alt="" />
                 </div>
                 
                 <div className="card_title">{name}</div>

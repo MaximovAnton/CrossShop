@@ -1,7 +1,7 @@
 import React from "react";
 import './Header.css'
 
-const Header = () => {
+const Header = ({cartOpened}) => {
     return(
         <div className="header">
             <div className="block_logo">
@@ -15,7 +15,7 @@ const Header = () => {
             </div>
             <div className="header_cart">
                 <ul>
-                    <li>полезная инфа</li>
+                    <li><button className="button" onClick={cartOpened}>Корзина</button></li>
                     <li><span>1200 $</span></li>
                 </ul>
             </div>

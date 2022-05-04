@@ -2,14 +2,8 @@ import React, { useState } from "react";
 import "./Content.css";
 import Card from "../Card/Card";
 
-const Content = () => {
+const Content = ({cardArray, onAddToCart, cartOpened}) => {
   
-  const cardArray = [
-    {id: 1, name: 'Nike', price: 1200},
-    {id: 2, name: 'Adidas', price: 1500},
-    {id: 3, name: 'Puma', price: 1300}
-  ]
-
   return (
     <div>
         <div className="title">
@@ -19,10 +13,13 @@ const Content = () => {
       <div className="content">
         <div className="cardWrap">
           {cardArray.map(item => <Card  key={item.id} 
-                                              name={item.name} 
-                                              price={item.price}
-                                              onFavourite={() => console.log(item.id, 'Добавили в закладки')}
-                                              onPlus={() => console.log(item.id)}/>)}
+                                        images={item.images}
+                                        name={item.name} 
+                                        price={item.price}
+                                        onFavourite={() => console.log(item.id, 'Добавили в закладки')}
+                                        onPlus={(obj) => console.log(obj)}
+                                        onAddToCart={onAddToCart}
+                                              />)}
         </div>
       </div>
     </div>
