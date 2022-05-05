@@ -4,12 +4,12 @@ import svg_unliked from '../../images/heart_unliked.png'
 import plus from '../../images/plus.svg'
 import ok from '../../images/ok.svg'
 
-const Card = ({name, price, onFavourite, images, onAddToCart}) => {
+const Card = ({id, name, price, onFavourite, images, onAddToCart}) => {
     
     const [img, setImg] = useState(false)
 
     const setImgApply = (e) => {
-        let a = {name, price, onFavourite, images, onAddToCart}
+        let a = {id, name, price, onFavourite, images, onAddToCart}
         onAddToCart(a)
         setImg(!img)
     }
@@ -23,7 +23,6 @@ const Card = ({name, price, onFavourite, images, onAddToCart}) => {
                 <div className="favorite">
                     <img src={svg_unliked} alt="favorite" width={30} height={30} onClick={onFavourite}/>
                 </div>
-                
                 <div className="card_img">
                     <img src={images} alt="" />
                 </div>

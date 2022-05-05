@@ -13,14 +13,9 @@ function App() {
   const [cart, setCart] = useState(false)
   const [cartItems, setCartItems] = useState([])
 
-  const onAddToCart = (a) => {
-    console.log(cartItems)
-    console.log(a)
-    
-    
+  const onAddToCart = (a) => { 
       let arr = (prev => [...prev, a])
       setCartItems(arr)
-    
   }
 
   const cartOpened = (e) => {
@@ -30,7 +25,8 @@ function App() {
   return (
     <div className="wrapper">
       <Header cartOpened={cartOpened}/>
-      <Content cardArray={cardArray} onAddToCart={onAddToCart}/>
+      <Content  cardArray={cardArray} 
+                onAddToCart={onAddToCart}/>
       {cart && <Cart  cartOpened={cartOpened} 
                       cartItems={cartItems}/>}
     </div>
