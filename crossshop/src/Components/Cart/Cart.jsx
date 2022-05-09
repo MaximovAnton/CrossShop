@@ -2,11 +2,9 @@ import React from "react";
 import CartItem from "./CartItem/CartItem";
 import "./Cart.css";
 
-const Cart = ({cartOpened, cartItems}) => {
-  console.log(cartItems)
-  return (
-    
-      
+const Cart = ({cartOpened, cartItems, deleteItemCart}) => {
+  
+  return (    
         <div className="cart">
           <div className="card_header">
             <h3>Корзина</h3>
@@ -16,9 +14,12 @@ const Cart = ({cartOpened, cartItems}) => {
             <div className="items"> 
             {cartItems.map(item => <CartItem 
                                             key={item.id}
+                                            id={item.id}
                                             img={item.images}
                                             name={item.name} 
-                                            price={item.price}/>)}
+                                            price={item.price}
+                                            cartItems={cartItems}
+                                            deleteItemCart={deleteItemCart}/>)}
               
             </div>
               

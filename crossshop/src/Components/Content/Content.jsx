@@ -22,7 +22,8 @@ const Content = ({cardArray, onAddToCart}) => {
 
       <div className="content">
         <div className="cardWrap">
-          {cardArray.filter(items => items.name.toLowerCase().includes(searchValue.toLowerCase())).map(item => <Card  key={item.id} 
+          {cardArray.filter(items => items.name.toLowerCase().includes(searchValue.toLowerCase())).map(item => <Card  
+                                        key={item.id} 
                                         id={item.id}
                                         images={item.images}
                                         name={item.name} 

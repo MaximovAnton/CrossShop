@@ -1,6 +1,7 @@
 import "./CartItem.css";
 
-const CartItem = ({ img, name, price }) => {
+const CartItem = ({id, img, name, price, deleteItemCart }) => {
+
   return (
     <div className="cartItem">
       <img src={img} alt="cross" />
@@ -8,7 +9,7 @@ const CartItem = ({ img, name, price }) => {
         <p>{name}</p>
         <b>{price}</b>
       </div>
-      <button className="close">X</button>
+      <button className="close" onClick={() => deleteItemCart(id)}>X</button>
     </div>
   );
 };

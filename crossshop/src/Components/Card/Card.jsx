@@ -8,9 +8,9 @@ const Card = ({id, name, price, onFavourite, images, onAddToCart}) => {
     
     const [img, setImg] = useState(false)
 
-    const setImgApply = (e) => {
-        let a = {id, name, price, onFavourite, images, onAddToCart}
-        onAddToCart(a)
+    const setImgApply = () => {
+        let cartItem = { id, name, price, onFavourite, images, onAddToCart}
+        onAddToCart(cartItem, id)
         setImg(!img)
     }
 

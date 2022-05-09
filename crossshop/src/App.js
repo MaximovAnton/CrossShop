@@ -13,12 +13,26 @@ function App() {
   const [cart, setCart] = useState(false)
   const [cartItems, setCartItems] = useState([])
 
-  const onAddToCart = (a) => { 
-      let arr = (prev => [...prev, a])
-      setCartItems(arr)
+  const onAddToCart = (cartItem) => {
+    for(let i = 0; i<cartItems.length; i++){
+      if(cartItems[i].id !== cartItem.id){
+        
+      }else{
+        return false
+      }
+    }
+    console.log('ДОБАВИЛИ')
+    let arr = (prev => [...prev, cartItem])
+    setCartItems(arr)
   }
 
-  const cartOpened = (e) => {
+  const deleteItemCart = (id) => {
+    console.log(id)
+    let arrDeleteItem = (cartItems) => cartItems.filter((cartItem) => cartItem.id !== id)
+    setCartItems(arrDeleteItem)
+  }
+
+  const cartOpened = () => {
     setCart(!cart)
   }
   
@@ -28,7 +42,8 @@ function App() {
       <Content  cardArray={cardArray} 
                 onAddToCart={onAddToCart}/>
       {cart && <Cart  cartOpened={cartOpened} 
-                      cartItems={cartItems}/>}
+                      cartItems={cartItems}
+                      deleteItemCart={deleteItemCart}/>}
     </div>
   );
 }
