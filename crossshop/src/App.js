@@ -6,31 +6,42 @@ import axios from 'axios'
 
 function App() {
  
-  const [items, setItems] = useState([])
-
-  useEffect(() => {
-    axios.get('https://627a79dc4a5ef80e2c1b1e9b.mockapi.io/cart')
-          .then(res =>  setItems(res.data))
-  },[])
-
+  const [card, setCard] = useState([])
   const [cart, setCart] = useState(false)
   const [cartItems, setCartItems] = useState([])
 
+  useEffect(() => {
+    axios.get('https://627a79dc4a5ef80e2c1b1e9b.mockapi.io/Card')
+          .then(res =>  setCard(res.data))
+    axios.get('https://627a79dc4a5ef80e2c1b1e9b.mockapi.io/Cart')
+          .then(res =>  setCartItems(res.data))
+  },[])
+
+  console.log(cartItems)
+
+  const addPostCart = (cartItem) => {
+    axios.post('https://627a79dc4a5ef80e2c1b1e9b.mockapi.io/Cart', cartItem)
+  }
+
   const onAddToCart = (cartItem) => {
     for(let i = 0; i<cartItems.length; i++){
-      if(cartItems[i].id !== cartItem.id){
-        
+      if(cartItems[i].id != cartItem.id){
+        console.log(cartItem.id,'GO')
       }else{
+        console.log('STOP')
         return false
       }
     }
-    let arr = (prev => [...prev, cartItem])
-    setCartItems(arr)
+      let arr = (prev => [...prev, cartItem])
+      setCartItems(arr)
+      addPostCart(cartItem)
   }
 
+  
   const deleteItemCart = (id) => {
     let arrDeleteItem = (cartItems) => cartItems.filter((cartItem) => cartItem.id !== id)
     setCartItems(arrDeleteItem)
+    axios.delete(`https://627a79dc4a5ef80e2c1b1e9b.mockapi.io/Cart/${id}`)
   }
 
   const cartOpened = () => {
@@ -40,7 +51,7 @@ function App() {
   return (
     <div className="wrapper">
       <Header cartOpened={cartOpened}/>
-      <Content  items={items} 
+      <Content  card={card} 
                 onAddToCart={onAddToCart}/>
       {cart && <Cart  cartOpened={cartOpened} 
                       cartItems={cartItems}
